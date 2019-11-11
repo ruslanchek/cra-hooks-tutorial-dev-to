@@ -1,5 +1,6 @@
 import React from 'react';
-import { BrowserRouter, Route, Switch, Link } from 'react-router-dom';
+import { BrowserRouter, Route, Switch, NavLink } from 'react-router-dom';
+import './index.css';
 
 const HomePage = () => (
   <div>
@@ -22,25 +23,52 @@ const PrivatePage = () => (
   </div>
 );
 
+const AuthorizePage = () => (
+  <div>
+    <h1>Authorize</h1>
+    <button>Press to login</button>
+  </div>
+);
+
 const App: React.FC = () => {
   return (
     <BrowserRouter>
-      <ul>
-        <li>
-          <Link to='/'>Home</Link>
-        </li>
-        <li>
-          <Link to='/public'>Public</Link>
-        </li>
-        <li>
-          <Link to='/private'>Private</Link>
-        </li>
-      </ul>
-      <Switch>
-        <Route exact path='/' component={HomePage} />
-        <Route exact path='/public' component={PublicPage} />
-        <Route exact path='/private' component={PrivatePage} />
-      </Switch>
+      <header>
+        <ul>
+          <li>
+            <NavLink exact activeClassName='active' to='/'>
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink exact activeClassName='active' to='/public'>
+              Public
+            </NavLink>
+          </li>
+          <li>
+            <NavLink exact activeClassName='active' to='/private'>
+              Private
+            </NavLink>
+          </li>
+        </ul>
+
+        <ul>
+          <li>
+            <NavLink exact activeClassName='active' to='/authorize'>
+              Authorize
+            </NavLink>
+          </li>
+        </ul>
+      </header>
+
+      <main>
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route exact path='/public' component={PublicPage} />
+          <Route exact path='/private' component={PrivatePage} />
+          <Route exact path='/authorize' component={AuthorizePage} />
+        </Switch>
+      </main>
     </BrowserRouter>
   );
 };
