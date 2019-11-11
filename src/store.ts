@@ -5,5 +5,5 @@ interface IStoreState {
 }
 
 export const store = new Store<IStoreState>({
-  authorized: true,
+  authorized: false,
 });
