@@ -2,7 +2,7 @@
   "name": "auth-test",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://ruslanchek.github.io/cra-hooks-tutorial-dev-to",
+  "homepage": ".",
   "dependencies": {
     "@types/jest": "24.0.22",
     "@types/node": "12.12.7",
