@@ -2,6 +2,10 @@
 
 [Write your own authorization hook using React Stores – a shared state manipulating library for React and React Native](https://dev.to/ruslanchek_17/write-your-own-authorization-hook-using-react-stores-a-shared-state-manipulating-library-for-react-and-react-native-146j)
 
+## Online demo
+
+https://react-stores-auth.netlify.com
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
