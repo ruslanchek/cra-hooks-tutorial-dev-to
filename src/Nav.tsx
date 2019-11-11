@@ -1,7 +1,11 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { store } from './store';
+import { useStore } from 'react-stores';
 
 export const Nav: React.FC = () => {
+  const authStoreState = useStore(store);
+
   return (
     <header>
       <ul>
@@ -24,7 +28,7 @@ export const Nav: React.FC = () => {
       <ul>
         <li>
           <NavLink exact activeClassName='active' to='/authorize'>
-            Authorize
+            {authStoreState.authorized ? 'Authorized' : 'Login'}
           </NavLink>
         </li>
       </ul>
