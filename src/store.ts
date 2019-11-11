@@ -4,6 +4,11 @@ interface IStoreState {
   authorized: boolean;
 }
 
-export const store = new Store<IStoreState>({
-  authorized: false,
-});
+export const store = new Store<IStoreState>(
+  {
+    authorized: false,
+  },
+  {
+    persistence: true,
+  },
+);
